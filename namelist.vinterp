@@ -1,18 +1,19 @@
 &io
- path_to_input = '/glade/scratch/sherrie/testing/'
- path_to_output = '/glade/scratch/sherrie/testing/wrf/'
+ path_to_input = '/home/std/std-srv/run1'
+ path_to_output = '/home/std/std-srv/test'
  root_name = 'wrfout'
- grid_id = 1
- start_date =  '1991-01-01_00'
+ grid_id = 2
+ start_date =  '2017-06-17_03'
  leap_year  = .TRUE.
  debug = .FALSE.
+ ncdf4 = .FALSE.
 /
 
 &interp_in
-  interp_levels = 1000.,800.,500 
+  interp_levels = 10,9,8,5,3,2,1,-0.1,0.1
   extrapolate = 1 
-  unstagger_grid = .FALSE. 
-  vert_coordinate = 'pres'
+  unstagger_grid = .true. 
+  vert_coordinate = 'ght_agl'
 /
 
 !interp_levels examples:
