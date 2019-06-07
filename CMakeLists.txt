@@ -20,8 +20,10 @@ set(CMAKE_Fortran_FLAGS_RELEASE "-O3 -mtune=native -fopt-info")
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/namelist.vinterp
         DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-file(GLOB_RECURSE sources  *.F90)
-add_executable(wrf_interp ${sources})
+file(GLOB_RECURSE sources  *.F90 *.f90)
+add_executable(wrf_interp wrf_interp.F90)
+add_executable(iowrf iowrf.f90)
 target_link_libraries(wrf_interp  ${NETCDF_LIBRARIES})
+target_link_libraries(iowrf ${NETCDF_LIBRARIES})
 
 
